@@ -1,0 +1,35 @@
+#Lista os pods
+kubectl get pods
+
+#Pega o ips internos dos pods
+kubectl describe pods | grep IP
+
+#Cria um pod apartir de um arquivo
+kubectl create -f <nome_arquiv0.yaml>
+
+#Deleta um pod
+Antes pega o id atraves do comando: kubectl get pods
+kubectl delete pods <id_pod>
+
+#Acessar o container
+kubectl exec -it <nome_pod> bash
+
+#Listar os contexts do kunernets
+kubectl get contexts
+
+#Trocar de contexto
+kubectl config use-context <nome_contexto>
+
+
+#Pega o Ip publico da aplicacao no minicube
+minikube service servico-aplicacao-fastabc --url
+
+#Dashborad minicube
+minikube dashboard
+
+#Logs
+kubectl logs aplicacao-deployment-6cc67c9d58-lp4kh
+
+#Alterar quantidade de replicas no loadbalancer
+kubectl scale deployment aplicacao-deployment --replicas=3
+
